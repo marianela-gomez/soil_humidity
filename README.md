@@ -37,7 +37,7 @@ This project aims to experimentally determine the calibration curve that maps **
 
 4. **Water the soil sample until saturation**
    - Gradually add water until the soil is completely wet.  
-   - Wait for the sample to expel excess water before taking the next readings.
+   - Wait for the sample to expel excess water before taking the next readings. This process may take some time, so ensure that all soil is uniformly moistened. 
 
 5. **Repeat measurements for 5 to 8 days**
    - Take daily readings to observe variations. 
