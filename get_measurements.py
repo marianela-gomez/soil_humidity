@@ -13,20 +13,23 @@ def get_capacitator_measurements():
     while len(five_measurements) <= 5:
         five_measurements.append(soil_adc.read_u16())
         utime.sleep(3)
-    return statistics.mean(five_measurements), statistics.stdev(five_measurements)
+    return statistics.mean(five_measurements), statistics.stdev(five_measurements) 
 
 ## It is useful to allow users to choose between reading and saving data. 
 
-type_of_measurement = str.lower(input('Read (R) / Save (S) \n'))
+if __name__ == '__main__':
 
-try: 
-    if type_of_measurement == 's' or 'save':
+    type_of_measurement = str.lower(input('Read (R) / Save (S) \n'))
+
+    if type_of_measurement == 's' or type_of_measurement == 'save':
+            
         my_measure = get_capacitator_measurements()
-        
+            
         with open('out.txt', 'a') as f:  #This file is stored on the Raspberry, not PC!!
-            f.write(str(my_measure))
-
-    if type_of_measurement == 'r' or 'read':
+            f.write(str(my_measure) + '\n')
+        
+    elif type_of_measurement == 'r' or type_of_measurement == 'read':
         print(get_capacitator_measurements())
-except: 
-    print('Please, choose between reading or saving data')
+        
+    else: 
+        print('Please, choose between reading or saving data')
