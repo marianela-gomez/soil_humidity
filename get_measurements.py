@@ -1,6 +1,6 @@
 from machine import ADC, Pin
 import utime
-import statistics
+from soil import statistics
 
 
 def get_capacitator_measurements():
